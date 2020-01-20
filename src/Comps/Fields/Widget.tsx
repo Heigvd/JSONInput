@@ -6,6 +6,7 @@ import { defaultWidget } from '../defaultWidgets';
 type Props = {
   value?: {};
   schema: Schema;
+  context?: {},
   editKey: string;
   __tree: FormContext;
   onChange: (value: any) => void;
@@ -36,6 +37,7 @@ function Widget<P extends Props>(props: P) {
     removeKey,
     alterKey,
     errorMessage,
+    context,
   } = props;
   const forwardProps = {
     value,
@@ -50,6 +52,7 @@ function Widget<P extends Props>(props: P) {
     removeKey,
     alterKey,
     errorMessage,
+    context,
   };
   if (view) {
     const { type } = view;

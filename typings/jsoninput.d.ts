@@ -12,6 +12,7 @@ declare class Form extends React.Component<
     schema?: {};
     value?: {};
     onChange: (value: any, errors: ValidationError[]) => void;
+    context?: {};
   },
   any
 > {

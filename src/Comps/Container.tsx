@@ -11,6 +11,7 @@ const EMPTY_ARRAY: any[] = [];
 export type Props = {
   onChange: (value: {} | undefined, errors: {}[]) => void;
   schema: Schema;
+  context?: {};
   value?: {};
 };
 /**
@@ -45,11 +46,13 @@ class Container extends React.Component<Props> {
         }}
         value={this.props.value}
         schema={this.props.schema}
+        context={this.props.context}
         onValueChange={this.update}
       >
-        {({ schema, value, status, dispatch }) => (
+        {({ schema, value, status, dispatch, context}) => (
           <SchemaType
             schema={schema}
+            context={context}
             dispatch={dispatch}
             value={value}
             path={EMPTY_ARRAY}

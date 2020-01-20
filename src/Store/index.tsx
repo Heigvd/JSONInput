@@ -4,6 +4,7 @@ import immer, { Immutable } from 'immer';
 interface StoreProps {
   value?: {};
   schema: {};
+  context?: {};
   onValueChange: (value: {}) => void;
   children: (props: {
     dispatch: (
@@ -13,16 +14,19 @@ interface StoreProps {
     schema: {};
     value: {};
     status: {};
+    context?: {};
   }) => JSX.Element;
 }
 export interface FormContext {
   value: Immutable<{}> | undefined | null;
   schema: {};
+  context: {};
   status: {};
 }
 const FormContext = React.createContext<FormContext>({
   value: undefined,
   schema: {},
+  context: {},
   status: {},
 });
 export const FormConsumer = FormContext.Consumer;
@@ -32,6 +36,7 @@ export class Store extends React.Component<StoreProps> {
     value: {},
     extValue: {},
     status: {},
+    context: {},
     oldProps: {},
   };
   static getDerivedStateFromProps(
@@ -40,6 +45,7 @@ export class Store extends React.Component<StoreProps> {
       schema: {};
       value: {};
       status: {};
+      context: {},
       oldProps: StoreProps;
       extValue: {} | undefined;
     },
@@ -48,6 +54,7 @@ export class Store extends React.Component<StoreProps> {
       const ret: Partial<typeof Store.prototype.state> = {
         value: nextProps.value,
         schema: nextProps.schema,
+        context: nextProps.context,
         oldProps: nextProps,
       };
       if (nextProps.value !== state.extValue) {
@@ -83,7 +90,7 @@ export class Store extends React.Component<StoreProps> {
     }
   }
   render() {
-    const { schema, value, status } = this.state;
+    const { schema, value, status, context } = this.state;
     const cloneValue =
       value != null ? JSON.parse(JSON.stringify(value)) : value;
     return (
@@ -91,6 +98,7 @@ export class Store extends React.Component<StoreProps> {
         value={{
           schema,
           value: cloneValue,
+          context,
           status,
         }}
       >
@@ -98,6 +106,7 @@ export class Store extends React.Component<StoreProps> {
           schema,
           value: cloneValue,
           status,
+          context,
           dispatch: this.dispatch,
         })}
       </FormContext.Provider>
