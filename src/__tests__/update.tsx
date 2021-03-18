@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import defaultViews from '../Comps/Views';
 import Container, { setDefaultWidgets } from '../index';
 import Input from '../Comps/Views/Input';
