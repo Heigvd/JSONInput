@@ -3945,10 +3945,10 @@ ignore-walk@^3.0.3:
   dependencies:
     minimatch "^3.0.4"
 
-immer@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.2.tgz#16d01364b9b27fa1adebdbfbf69ec750b46701b8"
-  integrity sha512-PC9UlH8GYfBCoTbPbDEULuXhdmr21+tlv10IzA9Eycpi2Qrgas0j8pUt8Z2ZxVJ/OHIzQq4W8AWymMGkCJplBA==
+immer@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-3.3.0.tgz#ee7cf3a248d5dd2d4eedfbe7dfc1e9be8c72041d"
+  integrity sha512-vlWRjnZqoTHuEjadquVHK3GxsXe1gNoATffLEA8Qbrdd++Xb+wHEFiWtwAKTscMBoi1AsvEMXhYRzAXA8Ex9FQ==
 
 import-local@^3.0.2:
   version "3.0.2"
@@ -7733,9 +7733,9 @@ write-file-atomic@^3.0.0:
     typedarray-to-buffer "^3.1.5"
 
 ws@^7.4.4:
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.4.tgz#383bc9742cb202292c9077ceab6f6047b17f2d59"
-  integrity sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.6.tgz#5654ca8ecdeee47c33a9a4bf6d28e2be2980377c"
+  integrity sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
