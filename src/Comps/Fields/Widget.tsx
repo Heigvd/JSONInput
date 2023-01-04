@@ -65,7 +65,7 @@ function Widget<P extends Props>(props: P) {
       return <Type {...forwardProps} formValue={formVal} view={view} />;
     }
   }
-  let renderType = Array.isArray(schema.type)
+  const renderType = Array.isArray(schema.type)
     ? (schema.type as TYPESTRING[]).find(t => t !== 'null')
     : schema.type;
   let Wdgt;

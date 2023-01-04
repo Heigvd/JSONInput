@@ -7,7 +7,7 @@ customValidator.attributes.errored = function validateErrored(
   instance: {},
   schema: { errored?: ErrorFn },
   options: { formValue: {}; ctx: { basePath?: string[] } },
-  ctx: { propertyPath: String },
+  ctx: { propertyPath: string },
 ) {
   if (typeof schema.errored !== 'function') {
     throw new jsonschema.SchemaError('"errored" expects a function');

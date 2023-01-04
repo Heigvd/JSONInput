@@ -1,9 +1,16 @@
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   devtool: 'source-map',
-  plugins: [],
+  plugins: [
+    new ESLintPlugin({
+      extensions: ['ts', 'tsx'],
+    }),
+    new ForkTsCheckerWebpackPlugin(),
+  ],
   module: {
     rules: [
       {
@@ -31,7 +38,6 @@ module.exports = {
   },
   externals: {
     "react": "react",
-    "react-dom": "react-dom"
   }
 };
 

@@ -1,9 +1,17 @@
 const path = require('path');
 
+const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
 module.exports = {
   entry: './src/play/index',
   devtool: 'source-map',
-  plugins: [],
+  plugins: [
+    new ESLintPlugin({
+      extensions: ['ts', 'tsx'],
+    }),
+    new ForkTsCheckerWebpackPlugin(),
+  ],
   module: {
     rules: [
       {
