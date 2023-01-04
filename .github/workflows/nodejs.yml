@@ -24,4 +24,4 @@ jobs:
     - name: check built correctly
       run: |
         git add .
-        git diff-index HEAD -- dist
+        git diff-index --quiet HEAD -- dist
