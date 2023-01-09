@@ -128,7 +128,12 @@ describe('Errored', () => {
     setDefaultWidgets(defaultViews as any);
   });
   test('"errored" is not a function', () => {
-    jest.spyOn(console, 'error'); // Hide error messages.
+
+    const errorLog = jest.spyOn(console, 'error'); // Hide error messages.
+    errorLog.mockImplementation(() => {
+        // no-op
+    });
+
     expect(() =>
       render(
         <Container

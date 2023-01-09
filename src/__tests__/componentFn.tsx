@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { act } from 'react-dom/test-utils';
 import { render, cleanup } from '@testing-library/react';
 import defaultViews from '../Comps/Views';
 import Container, { setDefaultWidgets } from '../index';
@@ -19,8 +20,13 @@ describe('Form functions', () => {
         onChange={() => {}}
       />,
     );
-    expect(form!.getValue()).toBe(value);
-    expect(form!.validate()).toHaveLength(0);
+    expect(form.getValue()).toBe(value);
+
+    let validation;
+    act(() => {
+        validation = form.validate();
+    });
+    expect(validation).toHaveLength(0);
   });
   test('Validate', () => {
     let form: Container;
@@ -33,9 +39,16 @@ describe('Form functions', () => {
       />,
     );
     expect(() => getByText('is not of a type(s) string')).toThrow();
-    const validationResults = form!.validate();
+    let validationResults;
+    act(()=> {
+        validationResults = form!.validate();
+    });
     expect(() => getByText('is not of a type(s) string')).not.toThrow();
-    expect(form!.validate()).toHaveLength(1);
+    let validation;
+    act(() => {
+        validation = form.validate();
+    })
+    expect(validation).toHaveLength(1);
     expect(validationResults[0].message).toBe('is not of a type(s) string');
   });
 });

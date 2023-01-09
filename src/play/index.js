@@ -1,10 +1,11 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 // import { AppContainer } from 'react-hot-loader'; // eslint-disable-line
 import React from 'react';
 import App from './App';
 
 function mount() {
-  render(<App />, document.getElementById('container'));
+  createRoot(document.getElementById('container'));
+  root.render(<App />);
 }
 
 mount();
