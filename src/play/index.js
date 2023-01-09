@@ -4,7 +4,7 @@ import React from 'react';
 import App from './App';
 
 function mount() {
-  createRoot(document.getElementById('container'));
+  const root = createRoot(document.getElementById('container'));
   root.render(<App />);
 }
 
