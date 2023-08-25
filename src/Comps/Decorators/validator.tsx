@@ -46,11 +46,12 @@ function validated<P extends Props>(
       );
     }
   }
-  return (p: P) => {
+  const validatedC = (p: P) => {
     return (
       <FormConsumer>{tree => <Validator {...p} __tree={tree} />}</FormConsumer>
     );
   };
+  return validatedC;
 }
 
 export default validated;

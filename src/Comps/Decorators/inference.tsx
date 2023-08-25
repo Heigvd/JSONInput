@@ -56,7 +56,7 @@ function inference<P extends InferProps>(Comp: React.ComponentType<P>) {
       nextProps: PartialSchemaProps,
       curState: InferState,
     ): Partial<InferState> {
-      let nextState: Partial<InferState> = {};
+      const nextState: Partial<InferState> = {};
       if (
         curState.oldEditKey !== nextProps.editKey ||
         curState.oldPath !== nextProps.path

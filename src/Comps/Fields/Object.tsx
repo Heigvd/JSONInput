@@ -88,7 +88,7 @@ class ObjectField extends React.Component<Props> {
 
     mergedProperties.sort(sortProperties);
     const keys = new Map<string, string>();
-    for (let i: number = 0; i < mergedProperties.length; i += 1) {
+    for (let i = 0; i < mergedProperties.length; i += 1) {
       const prop: string = mergedProperties[i];
       const propSchema = schemaForProp(props.schema, prop);
       if (!this.keys.has(prop)) {

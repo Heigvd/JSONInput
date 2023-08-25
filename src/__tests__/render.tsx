@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { act } from 'react-dom/test-utils';
+
 import { render, cleanup } from '@testing-library/react';
 import Container, { setDefaultWidgets } from '../index';
 import defaultViews from '../Comps/Views';
@@ -168,7 +170,11 @@ describe('Handle the unknown', () => {
       { container, baseElement: container },
     );
     // No errors after new value
-    expect(form!.validate()).toHaveLength(0);
+    let validation;
+    act(() => {
+        validation = form.validate();
+    });
+    expect(validation).toHaveLength(0);
   });
   test("Doesn't send update if value didn't change", () => {
     const schema = {};
